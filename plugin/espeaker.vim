@@ -9,10 +9,13 @@ if g:espeaker_use_dispatcher
 	let command='spd-say -S -N vim -e >/dev/null &'
 	echom system(command, a:text)
 else
-	let command=g:espeaker_synthesizer  . 
-	  \ ' -v ' . g:espeaker_voice .
-	  \ ' -s ' . g:espeaker_speed .
-	  \ ' --punct="' . g:espeaker_punct .
+"	let command=g:espeaker_synthesizer  . 
+"	  \ ' -v ' . g:espeaker_voice .
+"	  \ ' -r ' . g:espeaker_speed .
+"	  \ ' --punct="' . g:espeaker_punct .
+"	  \ '" &'
+	let command='say'  . 
+	  \ ' -r ' . ' 100 ' .
 	  \ '" &'
 	echom system(command, a:text)
 endif
